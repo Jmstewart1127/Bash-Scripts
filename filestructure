@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ ! -d $1 ]; then
+    mkdir ~/$1
+    if [ ! -d $2 ]; then
+        mkdir ~/$1/$2
+        mkdir ~/$1/$2/css
+        mkdir ~/$1/$2/js
+        mkdir ~/$1/$2/img
+        touch ~/$1/$2/index.html
+        touch ~/$1/$2/css/style.css
+        sudo chmod -R 777 ~/$1/$2/
+    else echo "$2 directory already exists."
+    fi
+else echo "$1 directory already exists."
+fi

@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ ! -d $1 ]; then
+    mkdir ~/$1
+    mkdir ~/$1/banners
+    mkdir ~/$1/pictures
+    mkdir ~/$1/logos
+    sudo chmod -R 777 ~/$1/
+else echo "$1 directory already exists."
+fi
+

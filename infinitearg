@@ -1,0 +1,8 @@
+#!bin/bash
+
+str="'$*'"
+for i in $str; do 
+    dir="$dir $i"
+done
+echo "$dir" 
+$dir=""

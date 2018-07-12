@@ -1,0 +1,25 @@
+#!/bin/bash
+
+photo=1
+banner=1
+logo=1
+for file in ~/$1/*; do
+    echo $file
+    if [[ $file =~ "banner" ]]; then
+        mv $file $1_banner_$banner.jpg
+        mv $1_banner_$banner.jpg ~/$1/banners
+        ((banner++))
+    fi
+    if [[ $file =~ "logo" ]]; then
+        mv $file $1_logo_$logo.jpg
+        mv $1_logo_$logo.jpg ~/$1/logos
+        ((logo++))
+    fi
+    if [[ $file == *.jpg || $file == *.png ]]; then
+        mv $file $1_$photo.jpg
+        mv $1_$photo.jpg ~/$1/pictures
+        ((photo++))
+        echo $photo
+    fi
+done
+echo "Photos renamed and organized... ur welcome bby gurl"
